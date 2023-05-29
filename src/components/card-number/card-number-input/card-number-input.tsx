@@ -1,8 +1,4 @@
-import {
-  handleInputChange,
-  handleInputKeyDown,
-  handleInputPaste,
-} from "../../../utils/input";
+import { handleInputKeyDown, handleInputPaste } from "../../../utils/input";
 
 import MCLogo from "../../../assets/mc_logo.svg";
 import VerifiedLogo from "../../../assets/verified.svg";
@@ -23,7 +19,6 @@ export function CardNumberInput() {
           type="tel"
           pattern="[0-9]{4}"
           maxLength={4}
-          onChange={handleInputChange}
           onKeyDown={(e) => handleInputKeyDown(e, 4)}
           onPaste={(e) => handleInputPaste(e, 4)}
         />
@@ -34,7 +29,6 @@ export function CardNumberInput() {
           type="tel"
           pattern="[0-9]{4}"
           maxLength={4}
-          onChange={handleInputChange}
           onKeyDown={(e) => handleInputKeyDown(e, 4)}
           onPaste={(e) => handleInputPaste(e, 4)}
         />
@@ -44,7 +38,6 @@ export function CardNumberInput() {
           type="tel"
           pattern="[0-9]{4}"
           maxLength={4}
-          onChange={handleInputChange}
           onKeyDown={(e) => handleInputKeyDown(e, 4)}
           onPaste={(e) => handleInputPaste(e, 4)}
         />
@@ -54,7 +47,6 @@ export function CardNumberInput() {
           type="tel"
           pattern="[0-9]{4}"
           maxLength={4}
-          onChange={handleInputChange}
           onKeyDown={(e) => handleInputKeyDown(e, 4)}
           onPaste={(e) => handleInputPaste(e, 4)}
         />

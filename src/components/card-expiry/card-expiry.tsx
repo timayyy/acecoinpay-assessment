@@ -1,8 +1,4 @@
-import {
-  handleInputChange,
-  handleInputKeyDown,
-  handleInputPaste,
-} from "../../utils/input";
+import { handleInputKeyDown, handleInputPaste } from "../../utils/input";
 import { StyledColumnGrid } from "../form-area/form-section/form-section.style";
 import { FormLabel } from "../form-label";
 import { InputField } from "../input/input.style";
@@ -23,8 +19,7 @@ export function CardExpiry() {
           type="tel"
           pattern="[0-9]{2}"
           maxLength={2}
-          onChange={handleInputChange}
-          onKeyDown={(e) => handleInputKeyDown(e, 2, true)}
+          onKeyDown={(e) => handleInputKeyDown(e, 2)}
           onPaste={(e) => handleInputPaste(e, 2)}
         />
         /
@@ -34,7 +29,6 @@ export function CardExpiry() {
           type="tel"
           pattern="[0-9]{2}"
           maxLength={2}
-          onChange={handleInputChange}
           onKeyDown={(e) => handleInputKeyDown(e, 2)}
           onPaste={(e) => handleInputPaste(e, 2)}
         />

@@ -15,10 +15,6 @@ export function focusToPrevInput(target: HTMLElement) {
   }
 }
 
-export function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-  const target = e.target;
-}
-
 export function handleChange(
   target: HTMLInputElement,
   value: string,
@@ -41,15 +37,8 @@ export function updateInputValue(
     start
   )}${extraValue}${target.value.substring(end, stringLength)}`;
   target.value = newValue.substring(0, stringLength);
-  // console.log({ newValue });
   if (newValue.length > stringLength) {
     const next = target.nextElementSibling as HTMLInputElement;
-    console.log({ next: target.nextElementSibling });
-    // if (target.closest("#date-input")?.querySelector("#year-input")) {
-    //   next = target
-    //     .closest("#date-input")
-    //     ?.querySelector("#year-input") as HTMLInputElement;
-    // }
     if (next == null) return;
     updateInputValue(
       next,
@@ -79,8 +68,7 @@ export function focusInput(
 }
 export function handleInputKeyDown(
   e: React.KeyboardEvent<HTMLInputElement>,
-  stringLength: number,
-  isMonth?: boolean
+  stringLength: number
 ) {
   const target = e.target as HTMLInputElement;
   const key = e.key;
@@ -116,11 +104,9 @@ export function handleInputKeyDown(
     }
     return;
   }
-  console.log({ key });
   if (key === "Backspace") {
     if (target.selectionStart === 0 && target.selectionEnd === 0) {
       const prev = target.previousElementSibling as HTMLInputElement | null;
-      console.log({ prev });
       if (prev && prev.localName === "input") {
         prev.value = prev.value.substring(0, prev.value.length - 1);
         focusToPrevInput(target);
